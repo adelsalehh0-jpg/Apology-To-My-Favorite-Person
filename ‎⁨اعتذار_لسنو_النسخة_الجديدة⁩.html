@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>💗</title>
+<style>
+body{margin:0;background:linear-gradient(135deg,#fff,#ffd6e7);font-family:Tahoma;overflow:hidden;display:flex;justify-content:center;align-items:center;height:100vh}
+#card{background:#ffffffcc;padding:30px 40px;border-radius:20px;text-align:center;z-index:2}
+button{padding:14px 26px;border:none;border-radius:30px;background:#ff6fa5;color:#fff;font-size:20px;cursor:pointer}
+#sno,#msg{display:none}
+#sno{font-size:56px;color:#ff4f8f;animation:pop 2s forwards}
+@keyframes pop{0%{opacity:0;transform:scale(.5)}20%{opacity:1;transform:scale(1.2)}80%{opacity:1}100%{opacity:0;transform:scale(.8)}}
+.heart{position:absolute;color:#ff6fa5;animation:rise 8s linear infinite}
+@keyframes rise{from{transform:translateY(110vh)}to{transform:translateY(-20vh)}}
+</style></head><body>
+<div id="card">
+<button id="start">اضغطي هنا 🤍</button>
+<div id="sno">سنو</div>
+<div id="msg"><h2>د. ساندي</h2><p>أعتذر عن اللي صار، وأتمنى تسامحيني.<br>وأتمنى تعطيني فرصة أصلح اللي صار. 🤍💗</p></div>
+</div>
+<script>
+for(let i=0;i<35;i++){let h=document.createElement('div');h.className='heart';h.textContent='❤';h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*20)+'px';h.style.animationDelay=(Math.random()*8)+'s';document.body.appendChild(h);}
+const start=document.getElementById('start'),sno=document.getElementById('sno'),msg=document.getElementById('msg');
+start.onclick=()=>{start.style.display='none';sno.style.display='block';setTimeout(()=>{sno.style.display='none';msg.style.display='block';},2000);}
+</script></body></html>
