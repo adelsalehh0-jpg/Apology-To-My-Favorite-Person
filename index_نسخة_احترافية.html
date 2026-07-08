@@ -1,0 +1,22 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>🤍</title>
+<style>
+body{margin:0;overflow:hidden;background:linear-gradient(135deg,#ffd6e8,#fff);font-family:Tahoma;display:flex;align-items:center;justify-content:center;height:100vh}
+#box{text-align:center;z-index:2}button{padding:14px 28px;border:none;border-radius:30px;font-size:22px;cursor:pointer}
+.hidden{display:none}#snow{font-size:68px;color:#ff4f8b;animation:z 2s}@keyframes z{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1.2)}}
+#choices{position:fixed;inset:0}#yes{position:absolute;left:50%;top:65%;transform:translate(-50%,-50%);background:#ff5f99;color:#fff}#no{position:absolute;background:#777;color:#fff;left:25%;top:25%}
+.f{position:absolute;bottom:-30px;animation:u linear infinite}@keyframes u{to{transform:translateY(-120vh);opacity:0}}
+#final{font-size:28px;line-height:2;color:#444;animation:f .8s}@keyframes f{from{opacity:0}to{opacity:1}}
+</style></head><body><div id=box>
+<div id=start><button onclick="go()">اضغطي هنا 🤍</button></div>
+<div id=sbox class=hidden><div id=snow>سنو 🤍</div></div>
+<div id=choices class=hidden><button id=yes>سامحيني 🤍</button><button id=no>ما أسامح 😅</button></div>
+<div id=final class=hidden><b>د. ساندي 🤍</b><br><br>أعتذر عن اللي صار،<br>وأتمنى تسامحيني،<br>وأتمنى تعطيني فرصة أصلح اللي صار. 🤍<br><br>💖🌹</div>
+</div>
+<script>
+function go(){start.classList.add('hidden');sbox.classList.remove('hidden');setTimeout(()=>{sbox.classList.add('hidden');choices.classList.remove('hidden')},2200)}
+yes.onclick=()=>{choices.classList.add('hidden');final.classList.remove('hidden');confetti()}
+function mv(){no.style.left=Math.random()*(innerWidth-140)+'px';no.style.top=Math.random()*(innerHeight-70)+'px'}
+['pointerenter','pointermove','touchstart','mouseenter'].forEach(e=>no.addEventListener(e,mv));
+for(let i=0;i<60;i++){let d=document.createElement('div');d.className='f';d.innerHTML=Math.random()>.5?'💖':'🌸';d.style.left=Math.random()*100+'vw';d.style.fontSize=(18+Math.random()*18)+'px';d.style.animationDuration=(4+Math.random()*5)+'s';d.style.animationDelay=Math.random()*5+'s';document.body.appendChild(d);}
+function confetti(){for(let i=0;i<80;i++){let c=document.createElement('div');c.className='f';c.innerHTML='✨';c.style.left=Math.random()*100+'vw';c.style.fontSize='20px';c.style.animationDuration='2s';document.body.appendChild(c);}}
+</script></body></html>
